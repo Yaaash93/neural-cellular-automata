@@ -17,7 +17,7 @@ class CAModel(nn.Module):
 
         self.fire_rate = 0.5
         self.n_channels = n_channels
-        self.device = torch.device("cpu")
+        self.device = torch.device(device if device is not None else "cpu")
 
         #perceive step (what does this do bruh)
 

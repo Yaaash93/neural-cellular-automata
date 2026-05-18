@@ -177,7 +177,7 @@ def main(argv=None):
     writer.add_image("ground truth", to_rgb(target_img_)[0])
 
     # Model and optimizer
-    model = CAModel(n_channels=args.n_channels, device=device).to(device)
+    model = CAModel(n_channels=args.n_channels, device=device)
     optimizer = torch.optim.Adam(model.parameters(), lr=2e-3)
 
     # Pool initialization
