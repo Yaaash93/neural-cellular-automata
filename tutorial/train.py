@@ -222,6 +222,12 @@ def main(argv=None):
 
             writer.add_video("eval", eval_video, it, fps=60)
 
+            if it % 1000 == 0:
+                torch.save(model.state_dict(), f"models/nca_{it}.pth")
+
+    pathlib.Path("models").mkdir(exist_ok=True)
+    torch.save(model.state_dict(), "nca_model.pth")
+
 
 if __name__ == "__main__":
     main()
